@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>카카오톡 버튼있는 메시지 전송하기</title>
+<script id="javascript-sdk" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+<p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong> By. Blackcats4567</p>
+<a id="kakao-link-btn" href="javascript:sendLink()">
+  <img
+    src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
+  />
+</a>
+<script type="text/javascript">
+ Kakao.init('	06a1b87790b7ab55973def7b9cc10555');
+  function sendLink() {
+    Kakao.Link.sendDefault({
+      objectType: 'feed',
+      content: {
+        title: '비에스 디스코드 링크!',
+        description: '아래 버튼을 눌러 디스코드에 참가하세요!',
+        imageUrl:
+          'https://play-lh.googleusercontent.com/bgOeh2FL7VDOE_cqjxuOGb33ksluOa0q5soAYY64O6TEexR_QxMRDWd_fGgeNiXDhv0',
+        link: {
+          mobileWebUrl: 'https://discord.gg/4pp2K7vKqD',
+          webUrl: 'https://discord.gg/4pp2K7vKqD',
+        },
+      },
+      social: {
+        likeCount: 999, //99999가 최대입니다
+        commentCount: 999, //99999가 최대입니다
+        sharedCount: 999, //99999가 최대입니다
+      },
+      buttons: [
+        {
+          title: 'Discord',
+          link: {
+            mobileWebUrl: 'https://discord.gg/4pp2K7vKqD',
+            webUrl: 'https://discord.gg/4pp2K7vKqD',
+          },
+        },
+      ],
+    })
+  }
+</script>
+  </body>
+</html>
